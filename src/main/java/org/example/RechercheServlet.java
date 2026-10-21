@@ -2,6 +2,7 @@ package org.example;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -18,7 +19,12 @@ public class RechercheServlet extends HttpServlet {
         // Récupérer la valeur du champ de recherche
         String item = request.getParameter("item");
         DatabaseManager dbManager = new DatabaseManager();
-        Connection conn = dbManager.connect();
+        try {
+			Connection conn = dbManager.connect();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         List<Clothing> toto = dbManager.searchClothes(item);
         System.out.print(toto.size());
         

@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.junit.jupiter.api.AfterEach;
@@ -21,8 +22,9 @@ public class DatabaseManagerTest {
     private Connection conn;
 
 	@BeforeEach
-    public void setUp() {
+    public void setUp() throws SQLException {
         dbManager = new DatabaseManager();
+        
         conn = dbManager.connect();
     }
 

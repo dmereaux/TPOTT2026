@@ -7,17 +7,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import org.example.Clothing;
 
 public class DatabaseManager {
     private static final String DB_URL = "jdbc:sqlite:clothing.db";
 
-    public Connection connect() {
-        try {
+    public Connection connect() throws SQLException {
+      
+//        	Class.forName("com.mysql.jdbc.Driver");
             return DriverManager.getConnection(DB_URL);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            return null;
-        }
+  
     }
 
     public List<Clothing> searchClothes(String query) {
