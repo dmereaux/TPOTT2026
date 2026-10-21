@@ -1,0 +1,35 @@
+package org.example;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/RechercheServlet")
+public class RechercheServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Récupérer la valeur du champ de recherche
+        String item = request.getParameter("item");
+        DatabaseManager dbManager = new DatabaseManager();
+        Connection conn = dbManager.connect();
+        List<Clothing> toto = dbManager.searchClothes(item);
+        System.out.print(toto.size());
+        
+        // Ajouter l'item à l'attribut de requête pour le transmettre à la page JSP
+        request.setAttribute("liste", toto);
+
+        // Rediriger vers la page JSP qui affiche les résultats
+        request.getRequestDispatcher("/result.jsp").forward(request, response);
+
+
+
+        
+    }
+}
