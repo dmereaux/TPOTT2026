@@ -14,4 +14,4 @@ COPY init.sql /docker-entrypoint-initdb.d/init.sql
 EXPOSE 8080
 
 # Commande pour démarrer Tomcat après l'initialisation de la base de données
-CMD ["sh", "-c", "sqlite3 /usr/local/tomcat/db/clothing.db < /docker-entrypoint-initdb.d/init.sql && catalina.sh run"]
+#CMD ["sh", "-c", "sqlite3 /usr/local/tomcat/db/clothing.db < /docker-entrypoint-initdb.d/init.sql && catalina.sh run"]
