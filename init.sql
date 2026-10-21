@@ -1,7 +1,4 @@
-CREATE DATABASE IF NOT EXISTS clothing;
 
--- Sélectionner la base de données créée
-ATTACH DATABASE 'clothing.db' AS db;
 
 -- Create table
 CREATE TABLE IF NOT EXISTS clothes (
