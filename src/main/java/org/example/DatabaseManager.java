@@ -14,7 +14,12 @@ public class DatabaseManager {
 
     public Connection connect() throws SQLException {
       
-//        	Class.forName("com.mysql.jdbc.Driver");
+    	    try {
+				Class.forName("org.sqlite.JDBC");
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
             return DriverManager.getConnection(DB_URL);
   
     }
