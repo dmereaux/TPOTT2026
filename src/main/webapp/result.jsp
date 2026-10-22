@@ -4,18 +4,36 @@
 		<meta charset= »UTF-8″>
 	    <title>Résultat</title>
 		<link rel="stylesheet" type="text/css" href="styles.css">
-	    <style>
-	        table {
-	            width: 100%;
-	            border-collapse: collapse;
-	        }
-	        th, td {
-	            padding: 8px;
-	            text-align: left;
-	            border-bottom: 1px solid #ddd;
-	        }
-	        tr:hover {background-color: #f5f5f5;}
-	    </style> 
+		<style>
+		    body {
+		        font-family: Arial, sans-serif;
+		        background-color: #f0f2f5;
+		        margin: 0;
+		        padding: 20px;
+		    }
+		    h2 {
+		        color: #333;
+		    }
+		    table {
+		        width: 100%;
+		        border-collapse: collapse;
+		        background-color: #fff;
+		        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		        margin-bottom: 20px;
+		    }
+		    th, td {
+		        padding: 8px;
+		        text-align: left;
+		        border-bottom: 1px solid #ddd;
+		    }
+		    tr:hover {
+		        background-color: #f5f5f5;
+		    }
+		    th {
+		        background-color: #007BFF;
+		        color: white;
+		    }
+		</style>
 	</head>
 <body>
     <h2>Résultats de la recherche</h2>

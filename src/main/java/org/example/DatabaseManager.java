@@ -79,4 +79,32 @@ public class DatabaseManager {
         
         return results;
     }
+
+	public List<Clothing> getAllClothes() {
+	       String sql = "SELECT id, name, price, popular FROM clothes";
+	        List<Clothing> results = new ArrayList<>();
+
+	        try (Connection conn = this.connect();
+	             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+	            //pstmt.setBoolean(1, true);
+
+	            ResultSet rs = pstmt.executeQuery();
+
+	            while (rs.next()) {
+	                Clothing clothing = new Clothing(
+	                        rs.getInt("id"),
+	                        rs.getString("name"),
+	                        rs.getDouble("price"),
+	                        rs.getBoolean("popular")
+	                );
+	                results.add(clothing);
+	            }
+
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }
+	        
+	        return results;
+	    }
 }
