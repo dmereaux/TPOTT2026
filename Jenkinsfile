@@ -47,5 +47,13 @@ pipeline {
            }
         }
     }
+    post {
+        always {
+
+                // Clean up
+                echo "delete docker image"
+                sh 'docker stop tpottc && docker rm tpottc'
+         }
+      }
 
 }
