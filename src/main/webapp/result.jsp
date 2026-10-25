@@ -42,7 +42,7 @@
 	
 
 	
-	<table>
+	<table id="table">
 	    <tr>
 	        <th>ID</th>
 	        <th>Name</th>

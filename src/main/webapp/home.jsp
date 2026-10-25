@@ -50,14 +50,14 @@
 <h1>Popular Clothes</h1>
 <!-- Display popular clothes here -->
 <h2>Recherchez un item</h2>
-<div>
+<div id="Recherche">
 <form action="RechercheServlet" method="post">
     <label for="item">Item:</label>
     <input type="text" id="item" name="item" required>
     <button type="submit">Rechercher</button>
 </form>
 </div>
-<div>
+<div id="ListProduits">
 <form action="ProduitsServlet" method="post">
     <label for="item">Afficher la liste des produits</label>
     <button type="submit">Liste Produits</button>
