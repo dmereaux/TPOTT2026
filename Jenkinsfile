@@ -36,24 +36,7 @@ pipeline {
                sh 'docker run -d -p 8080:8080 --name tpottc tpott'
                echo "totou"
            }
-        post {
-            always {
-
-                // Clean up
-                echo "lancer"
-             //   sh 'docker stop tpottc && docker rm tpottc'
-          
-              }
-           }
         }
     }
-    post {
-        always {
-
-                // Clean up
-                echo "delete docker image"
-                sh 'docker stop tpottc && docker rm tpottc'
-         }
-      }
 
 }
