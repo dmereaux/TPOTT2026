@@ -8,7 +8,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/dmereaux/TPOTT2026.git'
 
                 // Run the build on a Unix agent. You must have Maven installed.
-                sh 'mvn -Dmaven.test.failure.ignore=true clean install'
+                bat 'mvn -Dmaven.test.failure.ignore=true clean install'
 
                 // To run Maven on a Windows agent, use
                 // bat 'mvn -Dmaven.test.failure.ignore=true clean package'
@@ -26,14 +26,14 @@ pipeline {
         stage('deploy on docker test env') {
             steps {
                 // Get some code from a GitHub repository
-                sh 'docker build -t tpott .'
+                bat 'docker build -t tpott .'
            }
 
         }
         stage('launch web application') {
             steps {
                 // Get some code from a GitHub repository
-               sh 'docker run -d -p 8080:8080 --name tpottc tpott'
+               bat 'docker run -d -p 8080:8080 --name tpottc tpott'
                echo "totou"
            }
         }
